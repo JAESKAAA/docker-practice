@@ -8,7 +8,7 @@ COPY package.json ./
 
 RUN npm install
 
-COPY ./ ./
+COPY .. ./
 
 # node + 엔트리파일 이름
 CMD ["node", "server.js"]
