@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - echo "start creating an image with dockerfile"
+  - docker build -t jaeskaaa/react-prod:v1 Dockerfile_dev .
+
+script:
+  - docker run -e CI=true jaeskaaa/react-prod:v1 npm run test -- --coverage
+
+after_success:
+  - echo "test success"
