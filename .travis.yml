@@ -8,7 +8,7 @@ services:
 before_install:
   - cd docker-react-app
   - echo "start creating an image with dockerfile"
-  - docker build -t jaeskaaa/react-prod:v1 Dockerfile_dev .
+  - docker build -t jaeskaaa/react-prod:v1 -f Dockerfile_dev .
 
 script:
   - docker run -e CI=true jaeskaaa/react-prod:v1 npm run test -- --coverage
