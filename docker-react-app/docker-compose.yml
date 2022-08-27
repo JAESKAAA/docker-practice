@@ -1,0 +1,12 @@
+version: "3"
+services:
+  react:
+    build:
+      context: . #도커 파일 있는 위치 명시
+      dockerfile: Dockerfile_dev #도커 파일 이름
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/src/app/node_modules
+      - ./:/usr/src/app
+    stdin_open: true
