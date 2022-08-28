@@ -1,17 +1,17 @@
-sudo: required
-
-language: generic
-
-services:
-  - docker
-
-before_install:
-  - cd docker-react-app
-  - echo "start creating an image with dockerfile"
-  - docker build -t jaeskaaa/react-prod:v1 -f Dockerfile_dev .
-
-script:
-  - docker run -e CI=true jaeskaaa/react-prod:v1 npm run test -- --coverage
-
-after_success:
-  - echo "test success"
+#sudo: required
+#
+#language: generic
+#
+#services:
+#  - docker
+#
+#before_install:
+#  - cd docker-react-app
+#  - echo "start creating an image with dockerfile"
+#  - docker build -t jaeskaaa/react-prod:v1 -f Dockerfile_dev .
+#
+#script:
+#  - docker run -e CI=true jaeskaaa/react-prod:v1 npm run test -- --coverage
+#
+#after_success:
+#  - echo "test success"
