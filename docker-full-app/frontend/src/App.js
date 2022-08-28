@@ -1,11 +1,11 @@
-import React, {useState, userEffect} from "react";
+import React, {useState, useEffect} from "react";
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 
 function App() {
 
-  userEffect(() => {
+  useEffect(() => {
   //여기서 데이터베이스에 있는 값 가져옴
     axios.get('/api/values')
     .then(response => {
@@ -14,7 +14,7 @@ function App() {
     })
   }, []);
 
-  const [lists, setLists] = userState([])
+  const [lists, setLists] = useState([])
   const [value, setValue] = useState("");
 
   const changeHandler = (event) => {
@@ -49,7 +49,7 @@ function App() {
 
           <br />
 
-          <form className="example" onSubmit={submitandler}>
+          <form className="example" onSubmit={submitHandler}>
             <input
                 type="text"
                 placeholder="입력해주세요..."
