@@ -7,6 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
+//TODO DB 테스트 필요함
 //테이블 생성
 db.pool.query(`CREATE TABLE lists(
     id INTEGER AUTO_INCREMENT,
