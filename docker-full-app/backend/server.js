@@ -9,13 +9,13 @@ app.use(bodyParser.json());
 
 //TODO DB 테스트 필요함
 //테이블 생성
-db.pool.query(`CREATE TABLE lists(
-    id INTEGER AUTO_INCREMENT,
-    value TEXT,
-    PRIMARY KEY (id))`,
-    (err, results, fields) => {
-      console.log('results', results);
-    })
+// db.pool.query(`CREATE TABLE lists(
+//     id INTEGER AUTO_INCREMENT,
+//     value TEXT,
+//     PRIMARY KEY (id))`,
+//     (err, results, fields) => {
+//       console.log('results', results);
+//     })
 
 
 //DB lists 테이블에 있는 모든 데이터를 프론트 서버에 보내줌
